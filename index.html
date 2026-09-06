@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BREACH // terminal simulator</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="auth-screen" class="screen">
+  <div class="auth-box">
+    <h1>BREACH</h1>
+    <p class="subtitle">simulated hacking missions</p>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="login">Login</button>
+      <button class="tab-btn" data-tab="signup">Sign Up</button>
+    </div>
+
+    <form id="login-form" class="auth-form">
+      <input type="text" id="login-username" placeholder="username" autocomplete="username" required />
+      <input type="password" id="login-password" placeholder="password" autocomplete="current-password" required />
+      <button type="submit">Login</button>
+    </form>
+
+    <form id="signup-form" class="auth-form hidden">
+      <input type="text" id="signup-username" placeholder="username (3+ chars)" autocomplete="username" required />
+      <input type="password" id="signup-password" placeholder="password (6+ chars)" autocomplete="new-password" required />
+      <button type="submit">Create Account</button>
+    </form>
+
+    <p id="auth-error" class="error"></p>
+  </div>
+</div>
+
+<div id="app-screen" class="screen hidden">
+  <header>
+    <div class="brand">BREACH</div>
+    <div class="user-info">
+      <span id="username-display"></span>
+      <span id="score-display" class="score">0 pts</span>
+      <button id="logout-btn">Logout</button>
+    </div>
+  </header>
+
+  <div class="main">
+    <aside id="mission-list">
+      <h2>Missions</h2>
+      <div id="missions-container"></div>
+      <h2>Leaderboard</h2>
+      <div id="leaderboard-container"></div>
+    </aside>
+
+    <section id="terminal-panel">
+      <div id="terminal-output"></div>
+      <div class="terminal-input-row">
+        <span class="prompt">$</span>
+        <input type="text" id="terminal-input" autocomplete="off" placeholder="select a mission to begin" disabled />
+      </div>
+    </section>
+  </div>
+</div>
+
+<script src="terminal.js"></script>
+</body>
+</html>

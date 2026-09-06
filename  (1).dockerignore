@@ -1,0 +1,6 @@
+node_modules
+db/breach.db
+db/breach.db-*
+.env
+.git
+*.log
